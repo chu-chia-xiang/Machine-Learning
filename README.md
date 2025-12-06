@@ -2,7 +2,7 @@
 
 Final Project｜金屬表面缺陷偵測（Faster R-CNN，Kaggle 競賽）
 
-- 使用 PyTorch 實作並微調 Faster R-CNN 物件偵測模型，以預訓練 ResNet50-FPN 為 backbone，針對金屬表面缺陷資料集（NEU-DET 類型）訓練 6 類缺陷的 bounding box 與類別，並依 Kaggle 規格輸出 `submission.csv` 參與 mAP@0.5 評分。
+- 使用 PyTorch 實作並微調 Faster R-CNN 物件偵測模型，以預訓練 ResNet50-FPN 為 backbone，針對金屬表面缺陷資料集（NEU-DET 類型）訓練 6 類缺陷的 bounding box 與類別，並依 Kaggle 規格輸出。
 - 透過自訂 `Dataset` / `DataLoader` 讀取標註，搭配 Albumentations 做旋轉、翻轉、對比度調整等資料增強；訓練時採用 AdamW、learning rate scheduler（warmup + cosine）、AMP 混合精度與梯度裁剪穩定收斂，同時將偵測結果可視化儲存，以分析不同類別缺陷之偵測效果與常見誤判。
 - **功能重點：** Faster R-CNN（ResNet50-FPN）微調、工業缺陷資料前處理與增強、自訂偵測訓練流程（optimizer／scheduler／AMP）、Kaggle `submission.csv` 產生與偵測結果圖像化分析。
 
